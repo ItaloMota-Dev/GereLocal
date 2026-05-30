@@ -1,0 +1,246 @@
+.showcase {
+  position: relative;
+  display: flex;
+  min-height: 100%;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 56px;
+  background:
+    linear-gradient(90deg, rgba(26, 26, 46, 1), rgba(26, 26, 46, 0.9)),
+    radial-gradient(circle at 22% 22%, rgba(45, 212, 191, 0.12), transparent 30%),
+    radial-gradient(circle at 78% 76%, rgba(79, 70, 229, 0.18), transparent 32%),
+    #1a1a2e;
+
+  &::before {
+    position: absolute;
+    inset: 0;
+    content: '';
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
+      linear-gradient(135deg, rgba(26, 26, 46, 0.92), rgba(26, 26, 46, 0.72));
+    background-size: 52px 52px;
+    mask-image: linear-gradient(90deg, transparent 0%, #000 22%, #000 74%, transparent 100%);
+  }
+}
+
+.glowOne,
+.glowTwo,
+.ring {
+  position: absolute;
+  pointer-events: none;
+}
+
+.glowOne {
+  left: 12%;
+  top: 18%;
+  width: 300px;
+  height: 300px;
+  background: rgba(45, 212, 191, 0.16);
+  border-radius: 50%;
+  filter: blur(72px);
+}
+
+.glowTwo {
+  right: 10%;
+  bottom: 12%;
+  width: 360px;
+  height: 360px;
+  background: rgba(109, 93, 252, 0.2);
+  border-radius: 50%;
+  filter: blur(82px);
+}
+
+.panel {
+  position: relative;
+  z-index: 1;
+  width: min(78%, 620px);
+  min-height: 430px;
+  padding: 28px;
+  background: linear-gradient(145deg, rgba(248, 250, 252, 0.12), rgba(26, 26, 46, 0.58));
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 28px;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(18px);
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.mark {
+  position: relative;
+  display: inline-flex;
+  width: 56px;
+  height: 56px;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: linear-gradient(135deg, #5b5cf6, #7c3aed 54%, #2dd4bf);
+  border-radius: 18px;
+  box-shadow: 0 16px 36px rgba(91, 92, 246, 0.28);
+
+  svg:last-child {
+    position: absolute;
+    right: 7px;
+    bottom: 8px;
+  }
+}
+
+.headerLines {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 9px;
+
+  span {
+    display: block;
+    height: 10px;
+    background: rgba(226, 232, 240, 0.2);
+    border-radius: 999px;
+
+    &:first-child {
+      width: 42%;
+    }
+
+    &:last-child {
+      width: 28%;
+    }
+  }
+}
+
+.chart {
+  display: flex;
+  height: 210px;
+  align-items: end;
+  gap: 18px;
+  margin: 54px 0 34px;
+  padding: 0 16px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.16);
+
+  span {
+    flex: 1;
+    min-width: 38px;
+    background: linear-gradient(180deg, rgba(139, 92, 246, 0.92), rgba(45, 212, 191, 0.86));
+    border-radius: 999px 999px 8px 8px;
+    box-shadow: 0 18px 34px rgba(45, 212, 191, 0.16);
+
+    &:nth-child(1) {
+      height: 38%;
+    }
+
+    &:nth-child(2) {
+      height: 62%;
+    }
+
+    &:nth-child(3) {
+      height: 48%;
+    }
+
+    &:nth-child(4) {
+      height: 86%;
+    }
+
+    &:nth-child(5) {
+      height: 68%;
+    }
+  }
+}
+
+.rows {
+  display: grid;
+  gap: 12px;
+
+  div {
+    display: grid;
+    grid-template-columns: 34px 1fr 72px;
+    gap: 12px;
+    align-items: center;
+    padding: 12px;
+    background: rgba(20, 20, 38, 0.48);
+    border: 1px solid rgba(148, 163, 184, 0.12);
+    border-radius: 14px;
+  }
+
+  i,
+  span,
+  strong {
+    display: block;
+    border-radius: 999px;
+  }
+
+  i {
+    width: 34px;
+    height: 34px;
+    background: rgba(45, 212, 191, 0.22);
+  }
+
+  span,
+  strong {
+    height: 10px;
+    background: rgba(226, 232, 240, 0.18);
+  }
+
+  strong {
+    background: rgba(45, 212, 191, 0.32);
+  }
+}
+
+.floatCard {
+  position: absolute;
+  z-index: 2;
+  right: 9%;
+  top: 22%;
+  width: 172px;
+  padding: 18px;
+  background: rgba(20, 20, 38, 0.82);
+  border: 1px solid rgba(45, 212, 191, 0.22);
+  border-radius: 20px;
+  box-shadow: 0 26px 52px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(14px);
+
+  span,
+  strong,
+  i {
+    display: block;
+    border-radius: 999px;
+  }
+
+  span {
+    width: 58%;
+    height: 9px;
+    background: rgba(226, 232, 240, 0.2);
+  }
+
+  strong {
+    width: 86%;
+    height: 28px;
+    margin: 18px 0;
+    background: linear-gradient(90deg, #2dd4bf, #8b5cf6);
+  }
+
+  i {
+    width: 42%;
+    height: 9px;
+    background: rgba(226, 232, 240, 0.18);
+  }
+}
+
+.ring {
+  left: 11%;
+  bottom: 14%;
+  width: 150px;
+  height: 150px;
+  border: 24px solid rgba(45, 212, 191, 0.12);
+  border-right-color: rgba(139, 92, 246, 0.28);
+  border-radius: 50%;
+}
+
+@media (width <= 980px) {
+  .showcase {
+    display: none;
+  }
+}
