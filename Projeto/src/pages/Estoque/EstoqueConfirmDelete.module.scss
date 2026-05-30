@@ -1,0 +1,46 @@
+.body {
+  padding: 0;
+}
+
+.message {
+  margin: 0 0 16px;
+  font-size: 15px;
+  color: #111827;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.cancelBtn {
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 650;
+  background: #fff;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  cursor: pointer;
+
+  &:hover {
+    background: #f9fafb;
+  }
+}
+
+.deleteBtn {
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 750;
+  background: var(--danger, #ef4444);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+
+  &:hover {
+    filter: brightness(0.95);
+  }
+}
+

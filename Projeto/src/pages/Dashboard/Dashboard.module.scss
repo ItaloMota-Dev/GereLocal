@@ -1,0 +1,342 @@
+.dashboard {
+  max-width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* evita overflow vertical por conta do conteúdo flexível */
+.dashboard > * {
+  min-height: 0;
+}
+
+
+
+
+.metrics {
+
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+
+.charts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  align-items: stretch;
+  flex: 0 0 auto;
+  height: 280px;
+  min-height: 0;
+  overflow: hidden;
+}
+
+
+/* Mantém os cards de gráfico dentro da área visível (evita overflow-y) */
+.chartCard {
+  padding: 16px;
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  border-radius: 16px;
+
+  display: flex;
+  flex-direction: column;
+
+  /* garante que o flex possa "encolher" sem estourar altura */
+  min-height: 0;
+  height: 280px;
+
+  overflow: hidden;
+
+
+  /* o gráfico vai ocupar o restante do espaço do card */
+  .recharts-responsive-container {
+  height: 100%;
+  min-height: 0;
+
+  }
+
+  h3 {
+    margin: 0 0 8px;
+    font-size: 15px;
+    font-weight: 800;
+    color: #1f2937;
+    flex-shrink: 0;
+  }
+}
+
+@media (width <= 1024px) {
+  .metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .charts {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 180px;
+  font-size: 14px;
+  color: #9ca3af;
+}
+
+.chartArea {
+  flex: 1;
+  min-height: 0;
+}
+
+// =============================================
+// SALES DASHBOARD CARD - Container principal
+// =============================================
+
+.salesDashboardCard {
+  padding: 16px 18px;
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  border-radius: 16px;
+
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+// =============================================
+// CARD HEADER - Título à esquerda, botões à direita
+// =============================================
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+  color: #1f2937;
+}
+
+.actionsGroup {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.actionBtn,
+.primaryActionBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: #374151;
+  font-size: 15px;
+  font-family: inherit;
+  font-weight: 750;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.15s ease;
+
+
+  &:hover {
+    background: #f8fafc;
+    border-color: #d1d5db;
+  }
+}
+
+.primaryActionBtn {
+  min-height: 44px;
+  padding: 6px 14px;
+  color: #fff;
+  background: #1a1a2e;
+  border-color: #1a1a2e;
+  font-size: 15px;
+
+  &:hover {
+    color: #fff;
+    background: #111827;
+    border-color: #111827;
+  }
+}
+
+.moreActions {
+  position: relative;
+}
+
+.moreMenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 20;
+  display: flex;
+  min-width: 210px;
+  flex-direction: column;
+  padding: 8px;
+  background: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+
+  button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 42px;
+    padding: 8px 10px;
+    color: #111827;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: left;
+
+    &:hover {
+      background: #f3f4f6;
+    }
+  }
+}
+
+.fileInput {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+// =============================================
+// TABLE HEADER - Colunas da lista
+// =============================================
+
+.tableHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-top: 10px;
+  padding-bottom: 4px;
+  font-size: 12px;
+  color: #9ca3af;
+
+  span {
+    &:nth-child(2) {
+      text-align: center;
+    }
+
+    &:nth-child(3) {
+      text-align: right;
+    }
+  }
+}
+
+// =============================================
+// SALES LIST BODY - Lista de vendas com scroll
+// =============================================
+
+.salesListBody {
+  display: grid;
+  grid-template-rows: repeat(7, minmax(0, 1fr));
+  flex: 1;
+  min-height: 0;
+  max-height: none;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+
+    &:hover {
+      background: #b3b3b3;
+    }
+  }
+}
+
+// =============================================
+// SALES ROW - Cada venda
+// =============================================
+
+.salesRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  min-height: 0;
+  padding: 4px 0;
+  align-items: center;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid #f3f4f6;
+  }
+}
+
+.salesRowEmpty {
+  min-height: 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.idColumn {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: #374151;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.checkIcon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.dateColumn {
+  text-align: center;
+  color: #111827;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.valueColumn {
+  text-align: right;
+  color: #10b981;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.salesEmpty {
+  display: flex;
+  grid-row: 1 / -1;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 0;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 13px;
+}

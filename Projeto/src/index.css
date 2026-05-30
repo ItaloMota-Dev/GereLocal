@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+
+:root {
+
+  /* Paleta com alto contraste e consistência */
+  --primary: #4f46e5;
+  --primary-strong: #3730a3;
+  --shell: #1a1a2e;
+  --shell-soft: #22223a;
+
+  --success: #059669;
+  --danger: #dc2626;
+  --warning: #d97706;
+  --info: #2563eb;
+
+  --text-dark: #111827;
+  --text-muted: #374151;
+  --bg-light: #f8fafc;
+  --surface-soft: #f8fafc;
+  --card: #ffffff;
+  --border: #e5e7eb;
+
+  --focus: rgba(79, 70, 229, 0.35);
+
+  /* Legibilidade (público idoso / pouca fluência digital) */
+  --font-size-base: 21px;
+  --line-height-base: 1.65;
+
+
+  color-scheme: light;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: var(--text-muted);
+  background: #f8fafc;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+
+#root {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 650;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+
+p {
+  margin: 0;
+}
+
+button {
+  font-family: inherit;
+  min-height: 44px;
+}
+
+/* Áreas clicáveis e inputs: tamanho e espaçamento para toque (público mais velho) */
+button,
+[role='button'],
+a,
+input,
+select,
+textarea {
+  min-height: 44px;
+}
+
+
+
+input,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+button:disabled,
+[aria-disabled='true'] {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
