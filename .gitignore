@@ -1,5 +1,24 @@
 node_modules/
 
+<<<<<<< HEAD
 .env
 dist/
 build/
+=======
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.env
+>>>>>>> ccffdde (chore: ignore environment variables)
