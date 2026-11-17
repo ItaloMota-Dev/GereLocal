@@ -23,7 +23,7 @@ O **GereLocal** é um protótipo de gestão para pequenos comércios. Ele reúne
 A proposta surgiu da preocupação em tornar esse tipo de sistema mais acessível, priorizando uma experiência de uso clara, intuitiva e fácil de compreender, como alternativa direta aos sistemas de gestão mais complexos.
 
 > [!WARNING]
-> Este é um protótipo **somente de front-end**. Contas, sessão, produtos, vendas e caixa ficam no `localStorage` do navegador. Isso serve para demonstração com dados fictícios, mas **não sincroniza entre aparelhos e não oferece autenticação nem permissões seguras**. As restrições de perfil são aplicadas no próprio front-end e não protegem dados reais.
+> Este é um protótipo **somente de front-end, por enquanto**. Contas, sessão, produtos, vendas e caixa ficam no `localStorage` do navegador. Isso serve para demonstração com dados fictícios, mas **por enquanto não sincroniza entre aparelhos e não oferece autenticação nem permissões seguras**. As restrições de perfil são aplicadas no próprio front-end e, por enquanto, não protegem dados reais.
 
 ---
 
